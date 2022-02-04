@@ -15,8 +15,7 @@ with DAG(
     "new_git_pull_dags",
     default_args=default_args,
     description="A simple tutorial DAG",
-    schedule_interval="@daily",
-    start_date=datetime(2022, 1, 1),
+    schedule_interval="*/30 * * * *",
     catchup=False,
     tags=["example"],
 ) as dag:
