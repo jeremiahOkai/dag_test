@@ -21,7 +21,7 @@ with DAG(
     tags=["example"],
 ) as dag:
     git_pull = BashOperator(
-        task_id="git_pull", bash_command="source opt/airflow/gitpull.sh"
+        task_id="git_pull", bash_command="source /opt/airflow/gitpull.sh"
     )
 
     git_pull
