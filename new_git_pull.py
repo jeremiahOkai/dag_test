@@ -12,13 +12,16 @@ default_args = {
 }
 
 with DAG(
-    "git_pull_dags_new",
-    default_args=default_args
-    schedule_interval="*/30 * * * *",
-    catchup=False
+    "new_git_pull_dags",
+    default_args=default_args,
+    description="A simple tutorial DAG",
+    schedule_interval="@daily",
+    start_date=datetime(2022, 1, 1),
+    catchup=False,
+    tags=["example"],
 ) as dag:
     git_pull = BashOperator(
-        task_id="git_pull", bash_command="source /opt/airflow/gitpull.sh"
+        task_id="git_pull", bash_command="source opt/airflow/gitpull.sh"
     )
 
     git_pull
