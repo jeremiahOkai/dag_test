@@ -19,6 +19,6 @@ with DAG(
     catchup=False,
     tags=["example"],
 ) as dag:
-    git_pull = BashOperator(task_id="git_pull", bash_command="source gitpull.sh")
+    git_pull = BashOperator(task_id="git_pull", bash_command="sh gitpull.sh")
 
     git_pull
