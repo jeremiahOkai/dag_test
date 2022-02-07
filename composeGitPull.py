@@ -22,3 +22,7 @@ with DAG(
     git_pull = BashOperator(task_id="git_pull", bash_command="/opt/airflow/gitpull.sh ")
 
     git_pull
+
+
+# test 1
+# test 2
