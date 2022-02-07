@@ -12,7 +12,7 @@ default_args = {
 }
 
 with DAG(
-    "new_git_pull_dags",
+    "notComposeGitPull",
     default_args=default_args,
     description="A simple tutorial DAG",
     schedule_interval="*/30 * * * *",
@@ -22,5 +22,4 @@ with DAG(
     git_pull = BashOperator(
         task_id="git_pull", bash_command="/usr/local/airflow/gitpull.sh "
     )
-
     git_pull

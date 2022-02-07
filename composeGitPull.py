@@ -12,7 +12,7 @@ default_args = {
 }
 
 with DAG(
-    "new_git_pull_dags",
+    "composeGitPull",
     default_args=default_args,
     description="A simple tutorial DAG",
     schedule_interval="*/30 * * * *",
